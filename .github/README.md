@@ -14,7 +14,7 @@
 GO TO [RELOAD.PY](https://github.com/DAXXTEAM/DAXXMUSIC/blob/Master/DAXXMUSIC/plugins/tools/reload.py) THEN CHANGE MY ID NUMBER 
 
 <p align="center">
-  <img src="https://telegra.ph/file/4abd6e0f613946553de53.jpg">
+  <img src="https://telegra.ph/file/44bf8a8c8c535eb64f60f.png">
 </p>
 
 <p align="center">
