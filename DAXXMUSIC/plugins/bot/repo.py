@@ -52,7 +52,7 @@ InlineKeyboardButton("𝕃𝕆𝕍𝔼 𝕊ℍ𝕐ℝ𝕀𝔼", url=f"https://t.
 InlineKeyboardButton("ℂ𝕆𝕌ℙ𝕃𝔼 𝔻ℙ", url=f"https://t.me/anokhikeduniya"),
 ],
 [
-              InlineKeyboardButton("𝕊𝔸𝔻 𝔻ℙ", url=f"https://t.me/anokhikeduniya"),
+              InlineKeyboardButton("𝕊𝔸𝔻𝔻ℙ", url=f"https://t.me/anokhikeduniya"),
               InlineKeyboardButton("𝕃𝕆𝕍𝔼 𝔻ℙ", url=f"https://t.me/anokhikeduniya"),
               ],
               [
