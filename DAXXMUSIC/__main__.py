@@ -6,7 +6,7 @@ from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
 from polomusic import LOGGER, app, userbot
-from polomusic.core.call import DAXX
+from polomusic.core.call import AKKI
 from polomusic.misc import sudo
 from polomusic.plugins import ALL_MODULES
 from polomusic.utils.database import get_banned_users, get_gbanned
