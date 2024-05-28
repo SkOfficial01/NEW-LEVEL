@@ -14,7 +14,7 @@
 GO TO [RELOAD.PY](https://github.com/surajislam/AKKI/blob/Master/surajislam/plugins/tools/reload.py) THEN CHANGE MY ID NUMBER 
 
 <p align="center">
-  <img src="https://telegra.ph/file/dbb3222d0fd3712e2a0e4.jpg">
+  <img src="https://graph.org/file/a350ea9daf454a8a1637f.jpg">
 </p>
 
 <p align="center">
