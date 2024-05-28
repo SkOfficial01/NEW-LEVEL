@@ -1,15 +1,15 @@
-import asyncio
+import akki
 import importlib
 
 from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall
 
 import config
-from DAXXMUSIC import LOGGER, app, userbot
-from DAXXMUSIC.core.call import DAXX
-from DAXXMUSIC.misc import sudo
-from DAXXMUSIC.plugins import ALL_MODULES
-from DAXXMUSIC.utils.database import get_banned_users, get_gbanned
+from polomusic import LOGGER, app, userbot
+from polomusic.core.call import DAXX
+from polomusic.misc import sudo
+from polomusic.plugins import ALL_MODULES
+from polomusic.utils.database import get_banned_users, get_gbanned
 from config import BANNED_USERS
 
 
@@ -35,14 +35,14 @@ async def init():
         pass
     await app.start()
     for all_module in ALL_MODULES:
-        importlib.import_module("DAXXMUSIC.plugins" + all_module)
-    LOGGER("DAXXMUSIC.plugins").info("𝐀𝐥𝐥 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬 𝐋𝐨𝐚𝐝𝐞𝐝 𝐁𝐚𝐛𝐲🥳...")
+        importlib.import_module("AKKI.plugins" + all_module)
+    LOGGER("AKKI.plugins").info("𝐀𝐥𝐥 𝐅𝐞𝐚𝐭𝐮𝐫𝐞𝐬 𝐋𝐨𝐚𝐝𝐞𝐝 𝐁𝐚𝐛𝐲 CONGRATULATIONS 🥳...")
     await userbot.start()
-    await DAXX.start()
+    await AKKI.start()
     try:
-        await DAXX.stream_call("https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4")
+        await AKKI.stream_call("https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4")
     except NoActiveGroupCall:
-        LOGGER("DAXXMUSIC").error(
+        LOGGER("AKKI").error(
             "𝗣𝗹𝗭 𝗦𝗧𝗔𝗥𝗧 𝗬𝗢𝗨𝗥 𝗟𝗢𝗚 𝗚𝗥𝗢𝗨𝗣 𝗩𝗢𝗜𝗖𝗘𝗖𝗛𝗔𝗧\𝗖𝗛𝗔𝗡𝗡𝗘𝗟\n\n𝕡𝕠𝕝𝕠 𝗕𝗢𝗧 𝗦𝗧𝗢𝗣........"
         )
         exit()
@@ -50,12 +50,12 @@ async def init():
         pass
     await DAXX.decorators()
     LOGGER("DAXXMUSIC").info(
-        "╔═════ஜ۩۞۩ஜ════╗\n  ☠︎︎𝗠𝗔𝗗𝗘 𝗕𝗬 𝗠𝗥 𝕤𝕚𝕞𝕡𝕝𝕖 𝕓𝕠𝕪☠︎︎\n╚═════ஜ۩۞۩ஜ════╝"
+        "╔═════ஜ۩۞۩ஜ════╗\n  ☠︎︎𝕄𝔸𝔻𝔼 𝔹𝕐 𝕤𝕚𝕞𝕡𝕝𝕖 𝕓𝕠𝕪☠︎︎\n╚═════ஜ۩۞۩ஜ════╝"
     )
     await idle()
     await app.stop()
     await userbot.stop()
-    LOGGER("DAXXMUSIC").info("𝗦𝗧𝗢𝗣 𝐩𝐨𝐥𝐨 𝗠𝗨𝗦𝗜𝗖🎻 𝗕𝗢𝗧..")
+    LOGGER("AKKI").info("𝗦𝗧𝗢𝗣 𝐩𝐨𝐥𝐨 𝗠𝗨𝗦𝗜𝗖🎻 𝗕𝗢𝗧..")
 
 
 if __name__ == "__main__":
