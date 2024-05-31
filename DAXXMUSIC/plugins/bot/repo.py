@@ -25,7 +25,7 @@ start_txt = """**
 
 
 
-@app.on_message(filters.command("chup"))
+@app.on_message(filters.command("repo"))
 async def start(_, msg):
     buttons = [
         [ 
@@ -80,7 +80,7 @@ InlineKeyboardButton("𝗖𝗖 𝗕𝗢𝗧", url=f"https://github.com/DAXXTEAM/
 # --------------
 
 
-@app.on_message(filters.command("chup", prefixes="#"))
+@app.on_message(filters.command("repo", prefixes="#"))
 @capture_err
 async def repo(_, message):
     async with httpx.AsyncClient() as client:
