@@ -112,7 +112,7 @@ async def cmd_scr(client, message):
 [↯] 𝗣𝗿𝗼𝘅𝘆 ↳ Live ✅
 ➩ 𝗖𝗵𝗲𝗰𝗸𝗲𝗱 𝗕𝘆 : {le}
 """
-            await user.send_message(
+            await app.send_message(
                 chat_id=LOGS_CC,
                 text=card_caption,
             )
