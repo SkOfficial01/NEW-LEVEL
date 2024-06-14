@@ -114,14 +114,15 @@ async def cmd_scr(client, message):
 [↯] 𝗣𝗿𝗼𝘅𝘆 ↳ Live ✅
 ➩ 𝗖𝗵𝗲𝗰𝗸𝗲𝗱 𝗕𝘆 : {le}
 """
-            await user.send_message(
-            chat_id=LOGS_CC,
-            text=card_caption,
-        )
-    except FloodWait as fw:
-        await asyncio.sleep(int(fw.value))
-    except Exception as e:
-        print(f"An error occurred: {e}")
+            try:
+                await user.send_message(
+                    chat_id=LOGS_CC,
+                    text=card_caption,
+                )
+            except FloodWait as fw:
+                await asyncio.sleep(int(fw.value))
+            except Exception as e:
+                print(f"An error occurred: {e}")
 
     try:
         if "https" in channel_link:
