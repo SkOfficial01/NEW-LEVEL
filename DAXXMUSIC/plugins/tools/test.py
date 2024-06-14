@@ -116,7 +116,10 @@ async def cmd_scr(client, message):
                 chat_id=LOGS_CC,
                 text=card_caption,
             )
-            await asyncio.sleep(1)
+        except FloodWait as fw:
+            await asyncio.sleep(int(fw.value))
+        except:
+        continue
 
     try:
         if "https" in channel_link:
