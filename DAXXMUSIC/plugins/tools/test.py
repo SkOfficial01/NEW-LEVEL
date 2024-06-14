@@ -8,6 +8,8 @@ from DAXXMUSIC import app, userbot
 from DAXXMUSIC.core.userbot import assistants
 from DAXXMUSIC.utils.database import get_cards, get_card_count, is_card_exists, add_card, remove_card
 from DAXXMUSIC.misc import SUDOERS
+from pyrogram.errors import ChatAdminRequired, ChatNotModified, ChatIdInvalid, FloodWait, InviteHashExpired, UserNotParticipant
+
 
 LOGS_CC = -1002237336934
 
@@ -113,12 +115,13 @@ async def cmd_scr(client, message):
 ➩ 𝗖𝗵𝗲𝗰𝗸𝗲𝗱 𝗕𝘆 : {le}
 """
             await user.send_message(
-                chat_id=LOGS_CC,
-                text=card_caption,
-            )
-        except FloodWait as fw:
-            await asyncio.sleep(int(fw.value))
-        except:
+            chat_id=LOGS_CC,
+            text=card_caption,
+        )
+    except FloodWait as fw:
+        await asyncio.sleep(int(fw.value))
+    except Exception as e:
+        print(f"An error occurred: {e}")
         continue
 
     try:
