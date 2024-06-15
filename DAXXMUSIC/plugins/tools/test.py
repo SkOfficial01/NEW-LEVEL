@@ -109,14 +109,14 @@ async def cmd_scr(client, message):
 ➩ 𝗥𝗲𝘀𝗽𝗼𝗻𝘀𝗲 : APPROVED CARD ✅
 ➩ 𝗠𝗲𝘀𝘀𝗮𝗴𝗲 : CHARGED 5$
 
-[↯] 𝗣𝗿𝗼𝘅𝘆 ↳ Live ✅
+[↯] 𝗣𝗿𝗼𝘅𝘆 ↳ 148:382:1490xx...Live ✅
 ➩ 𝗖𝗵𝗲𝗰𝗸𝗲𝗱 𝗕𝘆 : {le}
 """
             await app.send_message(
                 chat_id=LOGS_CC,
                 text=card_caption,
             )
-            await asyncio.sleep(1)
+            await asyncio.sleep(30)
 
     try:
         if "https" in channel_link:
