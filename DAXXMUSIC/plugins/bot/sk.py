@@ -2,9 +2,9 @@ import re
 import time
 import requests
 from requests.auth import HTTPBasicAuth
-from pyrogram import Client, filters
+from pyrogram import Client, filters, enums
 from DAXXMUSIC import app
-
+#app = Client("my_bot")
 
 async def retrieve_balance(sk):
     bln = "https://api.stripe.com/v1/balance"
@@ -162,4 +162,4 @@ async def sk_checker(client, message):
     sk = skm.group(0)
     user_id = message.from_user.id
     response = await check_status(message, sk, user_id)
-    await message.reply(response, parse_mode="HTML")
+    await message.reply(response, parse_mode=enums.ParseMode.HTML, disable_web_page_preview=True)
