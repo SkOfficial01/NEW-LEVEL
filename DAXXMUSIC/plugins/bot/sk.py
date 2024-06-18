@@ -162,4 +162,4 @@ async def sk_checker(client, message):
     sk = skm.group(0)
     user_id = message.from_user.id
     response = await check_status(message, sk, user_id)
-    await message.reply(response, parse_mode="html")
+    await message.reply(response, parse_mode="HTML")
