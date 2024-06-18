@@ -3,7 +3,7 @@ import time
 import requests
 from requests.auth import HTTPBasicAuth
 from pyrogram import Client, filters
-from EQUROBOT import app
+from DAXXMUSIC import app
 
 
 async def retrieve_balance(sk):
