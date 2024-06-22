@@ -1,12 +1,12 @@
 {
-    "name": "𝙳𝙰𝚇𝚇 𝙼𝚄𝚂𝙸𝙲",
+    "name": "𝙍𝙊𝙃𝘼𝙉 𝙈𝙐𝙎𝙄𝘾",
     "description": "A Telegram Music Player Bot, written in Python with Pyrogram and Py-Tgcalls.",
-    "logo": "https://telegra.ph/file/dbb3222d0fd3712e2a0e4.jpg",
+    "logo": "https://telegra.ph/file/cfbdee8103102bcb2e5da.jpg",
     "keywords": [
     "python3",
     "telegram",
     "bot",
-    "DAXX",
+    "ROHAN",
     "MusicBot",
     "telegram-bot",
     "pyrogram"
