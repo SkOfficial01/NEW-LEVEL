@@ -46,6 +46,9 @@ def get_json_response(data):
         
         fim = response.text
 
+        # Debugging: Log the raw response text
+        print(f"Raw response text: {fim}")
+
         if 'No such payment_page' in fim:
             return "❌ Expired Link: The payment page associated with the link no longer exists."
         else:
@@ -75,6 +78,8 @@ def get_json_response(data):
 
                 return json.dumps(data)
             except Exception as e:
+                # Debugging: Log the exception
+                print(f"Parsing error: {str(e)}")
                 return f"❌ Parsing Error: {str(e)}"
 
     return None
@@ -94,19 +99,25 @@ async def grab(client, message):
         json_response = get_json_response(checkout_link)
 
         if json_response:
-            data = json.loads(json_response)
+            try:
+                data = json.loads(json_response)
 
-            response_message = "𝗦𝗶𝘁𝗲: {}\n\n".format(data['name'])
-            response_message += "𝗣𝗞: {}\n".format(data['pklive'])
-            response_message += "𝗖𝗦: {}\n".format(data['cslive'])
-            response_message += "𝗘𝗺𝗮𝗶𝗹: {}\n".format(data['email'])
-            response_message += "𝗔𝗺𝗼𝘂𝗻𝘁: {}\n".format(data['amount'])
-            response_message += "𝗖𝘂𝗿𝗿𝗲𝗻𝗰𝘆: {}\n\n".format(data.get('currency', 'N/A'))
-            response_message += "𝗖𝗵𝗲𝗰𝗸𝗲𝗱 𝗯𝘆 DAXX"
+                response_message = "𝗦𝗶𝘁𝗲: {}\n\n".format(data['name'])
+                response_message += "𝗣𝗞: {}\n".format(data['pklive'])
+                response_message += "𝗖𝗦: {}\n".format(data['cslive'])
+                response_message += "𝗘𝗺𝗮𝗶𝗹: {}\n".format(data['email'])
+                response_message += "𝗔𝗺𝗼𝘂𝗻𝘁: {}\n".format(data['amount'])
+                response_message += "𝗖𝘂𝗿𝗿𝗲𝗻𝗰𝘆: {}\n\n".format(data.get('currency', 'N/A'))
+                response_message += "𝗖𝗵𝗲𝗰𝗸𝗲𝗱 𝗯𝘆 DAXX"
 
-            await message.reply(response_message, parse_mode=enums.ParseMode.HTML)
+                await message.reply(response_message, parse_mode=enums.ParseMode.HTML)
+            except json.JSONDecodeError as json_err:
+                await message.reply(f"Error decoding JSON: {json_err}", parse_mode=enums.ParseMode.HTML)
+            except Exception as e:
+                await message.reply(f"Unexpected Error: {e}", parse_mode=enums.ParseMode.HTML)
         else:
             await message.reply("❌ Invalid Link", parse_mode=enums.ParseMode.HTML)
 
     except Exception as e:
         await message.reply(f"Error: {e}", parse_mode=enums.ParseMode.HTML, disable_web_page_preview=True)
+
