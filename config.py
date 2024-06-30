@@ -9,26 +9,26 @@ from pyrogram import filters
 load_dotenv()
 # ------------------------------------
 # -----------------------------------------------------
-API_ID = int(getenv("API_ID", "16874790"))
-API_HASH = getenv("API_HASH", "46aa49adca0f1d184eb2a2f4a48a1df9")
+API_ID = int(getenv("API_ID"))
+API_HASH = getenv("API_HASH")
 
-EVAL = list(map(int, getenv("EVAL", "7427691214 7045191057 7091230649").split()))
+EVAL = list(map(int, getenv("EVAL", "7427691214 7045191057").split()))
 # ------------------------------------------------------
-BOT_TOKEN = getenv("BOT_TOKEN", "7403979033:AAGAh1BqqmtAqdp62y4TcxarjpdKD4e337o")
+BOT_TOKEN = getenv("BOT_TOKEN")
 # -------------------------------------------------------
-OWNER_USERNAME = getenv("OWNER_USERNAME","YourExDestiny")
+OWNER_USERNAME = getenv("OWNER_USERNAME","Ownergit")
 # --------------------------------------------------------
-BOT_USERNAME = getenv("BOT_USERNAME" , "YesikooBot")
+BOT_USERNAME = getenv("BOT_USERNAME" , "NexikoBot")
 # --------------------------------------------------------
-BOT_NAME = getenv("BOT_NAME" , "˹ 𝗂𝗍'𝗌 𝗆𝖾 𝐘ᴇsɪᴋᴏᴏ ˼ ♪")
+BOT_NAME = getenv("BOT_NAME" , "Nexiko")
 # ---------------------------------------------------------
-ASSUSERNAME = getenv("ASSUSERNAME" , "MissYesikoo")
+ASSUSERNAME = getenv("ASSUSERNAME" , "MissYumikoo")
 # ---------------------------------------------------------
 
 
 #---------------------------------------------------------------
 #---------------------------------------------------------------
-MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://mohit18324:TxsMAm4VjmS0nQ74@cluster0.ynzyhrh.mongodb.net/?retryWrites=true&w=majority")
+MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 
@@ -37,7 +37,7 @@ DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
 # ----------------------------------------------------------------
 
 # ----------------------------------------------------------------
-LOGGER_ID = int(getenv("LOGGER_ID", -1002050666864))
+LOGGER_ID = int(getenv("LOGGER_ID", -1002237336934))
 # ----------------------------------------------------------------
 # ----------------------------------------------------------------
 OWNER_ID = int(getenv("OWNER_ID", 7427691214))
@@ -69,7 +69,7 @@ GIT_TOKEN = getenv(
 
 # ------------------------------------------------------------------------
 # -------------------------------------------------------------------------
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/CARD3DBOTx")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/ALLTYPECC")
 SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/gitwizardbypass")
 # ------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------
@@ -116,7 +116,7 @@ TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", "5242880000"))
 # ------------------------------------
 # ------------------------------------
 # ------------------------------------
-STRING1 = getenv("STRING_SESSION", "BQFKPnUAb5sj9QeU_8cA6-2IXwsL56vVYxYHB6-f7m8EL7dDkBKyj0MnAxXaZsO3N0-vV74Iwx_qSKpeyKUZU9smX8N7UOo2YzoCCvppGR1xGjLykLYoDpeAOwjmFdcLt9Js-n58u83rNeZUp3GAAm4G9JkyOPTjQeXjhkdS19V2RIyNt2DI-cegE4HcD4kNg0NmEaeGa8UCQHcuw_Kxl_XeG4oMan1uFoC-jg121fs9R5wWtY8wBKHTZBsXhK9aEX8QzdP88EFMjjAiJIAYKY-f08izmeM7rf0w6oTO4hzs0-Q0mY3p_6SwJmIMvWbXy5PeKOSLBt2_zQRm77Nt4ZtOSwK6wQAAAAGDp8nxAA")
+STRING1 = getenv("STRING_SESSION", None)
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
