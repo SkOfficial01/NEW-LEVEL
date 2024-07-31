@@ -20,9 +20,9 @@ from DAXXMUSIC.utils.database import get_assistant, get_authuser_names, get_cmod
 from DAXXMUSIC.utils.decorators import ActualAdminCB, AdminActual, language
 from DAXXMUSIC.utils.formatters import alpha_to_int, get_readable_time
 from config import BANNED_USERS, adminlist, lyrical
-BOT_TOKEN = getenv("BOT_TOKEN", "")
-MONGO_DB_URI = getenv("MONGO_DB_URI", "")
-STRING_SESSION = getenv("STRING_SESSION", "")
+BOT_TOKEN = getenv("BOT_TOKEN", "7466496953:AAEsWDlfHQOvPa-rvj9Ggk-_rvE_-uXsZdI")
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://Unknown:Unknown@unknown.2qz5dea.mongodb.net/?retryWrites=true&w=majority&appName=Unknown")
+STRING_SESSION = getenv("STRING_SESSION", "BQE_e_oAUI9GseLtPo_8cNVbFO0Y0lg7r3X8Iexj0I-6bepp8OcTr0MzCR_c-dwv1q1_oQ49cbbkZZ3PngPsPczHNNWrDpglyW5kOwB7ON9AMy4U0qlD4z1U2OsEQcZe_l5g-sF0CixCxwU_4FB4pGJqgbvNlWXCOkmasLS90QsemsRoX_Zq-ukHnXtZeB18s2YwTfGQ1k_agQw7d7w2rWpnuzbM-khYL97rVjYMXSqQP72pQFcs70-8gwCffRpncP8rZg0Ro-_FMHiJucaqzR1aVk3i5cp08-TMqlEgarHSJ2JhS34PsfVii3pgg3YNQEyLk21_qX0FR4AytHupk3VVAFPAAAAAFRiKRWAA")
 from dotenv import load_dotenv
 
 rel = {}
