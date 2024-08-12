@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 import requests
-from EQUROBOT import app
+from DAXXMUSIC import app
 
 
 def check_proxy(proxy):
