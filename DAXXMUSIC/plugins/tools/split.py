@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 import os
 
-from EQUROBOT import app
+from DAXXMUSIC import app
 
 @app.on_message(filters.command("split") & filters.reply)
 async def split_file(client: Client, message: Message):
