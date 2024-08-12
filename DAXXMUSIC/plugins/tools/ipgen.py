@@ -3,7 +3,7 @@ import socket
 import struct
 import random
 import os
-from EQUROBOT import app
+from DAXXMUSIC import app
 
 # Function to generate a random IPv4 address
 def generate_random_ipv4():
