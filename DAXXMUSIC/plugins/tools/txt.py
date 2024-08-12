@@ -1,7 +1,7 @@
 import os
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from EQUROBOT import app
+from DAXXMUSIC import app
 
 # Function to save the message text to a .txt file
 def save_message_to_txt(message_text: str, filename: str = "messages.txt"):
