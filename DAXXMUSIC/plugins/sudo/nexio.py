@@ -6,111 +6,100 @@ from pyrogram import *
 from pyrogram.types import *
 from DAXXMUSIC.utils.daxx_ban import admin_filter
 
-
-
-
-
+OWNER_ID = 7427691214  # Define the owner ID
 
 Yumikoo_text = [
-"hey please don't disturb me.",
-"who are you",    
-"aap kon ho",
-"aap mere owner to nhi lgte ",
-"hey tum mera name kyu le rhe ho meko sone do",
-"ha bolo kya kaam hai ",
-"dekho abhi mai busy hu ",
-"hey i am busy",
-"aapko smj nhi aata kya ",
-"leave me alone",
-"dude what happend",    
+    "hey please don't disturb me.",
+    "who are you",
+    "aap kon ho",
+    "aap mere owner to nhi lgte",
+    "hey tum mera name kyu le rhe ho meko sone do",
+    "ha bolo kya kaam hai",
+    "dekho abhi mai busy hu",
+    "hey i am busy",
+    "aapko smj nhi aata kya",
+    "leave me alone",
+    "dude what happend",
 ]
 
 strict_txt = [
-"i can't restrict against my besties",
-"are you serious i am not restrict to my friends",
-"fuck you bsdk k mai apne dosto ko kyu kru",
-"hey stupid admin ", 
-"ha ye phele krlo maar lo ek dusre ki gwaand",  
-"i can't hi is my closest friend",
-"i love him please don't restict this user try to usertand "
+    "i can't restrict against my besties",
+    "are you serious i am not restrict to my friends",
+    "fuck you bsdk k mai apne dosto ko kyu kru",
+    "hey stupid admin",
+    "ha ye phele krlo maar lo ek dusre ki gwaand",
+    "i can't hi is my closest friend",
+    "i love him please don't restict this user try to usertand"
 ]
 
-
- 
-ban = ["ban","boom"]
-unban = ["unban",]
-mute = ["mute","silent","shut"]
-unmute = ["unmute","speak","free"]
-kick = ["kick", "out","nikaal","nikal"]
-promote = ["promote","adminship"]
-fullpromote = ["fullpromote","fulladmin"]
-demote = ["demote","lelo"]
+ban = ["ban", "boom"]
+unban = ["unban"]
+mute = ["mute", "silent", "shut"]
+unmute = ["unmute", "speak", "free"]
+kick = ["kick", "out", "nikaal", "nikal"]
+promote = ["promote", "adminship"]
+fullpromote = ["fullpromote", "fulladmin"]
+demote = ["demote", "lelo"]
 group = ["group"]
 channel = ["channel"]
 
-
-
 # ========================================= #
 
-
-@app.on_message(filters.command(["exi","exiko"], prefixes=["n", "N"]) & admin_filter)
-async def restriction_app(app :app, message):
+@app.on_message(filters.command(["exi", "exiko"], prefixes=["n", "N"]) & admin_filter)
+async def restriction_app(app: app, message):
     reply = message.reply_to_message
     chat_id = message.chat.id
     if len(message.text) < 2:
         return await message.reply(random.choice(Yumikoo_text))
     bruh = message.text.split(maxsplit=1)[1]
     data = bruh.split(" ")
-    
+
     if reply:
         user_id = reply.from_user.id
         for banned in data:
             print(f"present {banned}")
             if banned in ban:
                 if user_id in SUDOERS:
-                    await message.reply(random.choice(strict_txt))          
+                    await message.reply(random.choice(strict_txt))
                 else:
                     await app.ban_chat_member(chat_id, user_id)
                     await message.reply("OK, Ban kar diya madrchod ko sala Chutiya tha !")
-                    
+
         for unbanned in data:
             print(f"present {unbanned}")
             if unbanned in unban:
                 await app.unban_chat_member(chat_id, user_id)
-                await message.reply(f"Ok, aap bolte hai to unban kar diya") 
-                
+                await message.reply(f"Ok, aap bolte hai to unban kar diya")
+
         for kicked in data:
             print(f"present {kicked}")
             if kicked in kick:
                 if user_id in SUDOERS:
                     await message.reply(random.choice(strict_txt))
-                
                 else:
                     await app.ban_chat_member(chat_id, user_id)
                     await app.unban_chat_member(chat_id, user_id)
-                    await message.reply("get lost! bhga diya bhosdi wale ko") 
-                    
+                    await message.reply("get lost! bhga diya bhosdi wale ko")
+
         for muted in data:
-            print(f"present {muted}") 
+            print(f"present {muted}")
             if muted in mute:
                 if user_id in SUDOERS:
                     await message.reply(random.choice(strict_txt))
-                
                 else:
                     permissions = ChatPermissions(can_send_messages=False)
                     await message.chat.restrict_member(user_id, permissions)
-                    await message.reply(f"muted successfully! Disgusting people.") 
-                    
+                    await message.reply(f"muted successfully! Disgusting people.")
+
         for unmuted in data:
-            print(f"present {unmuted}")            
+            print(f"present {unmuted}")
             if unmuted in unmute:
                 permissions = ChatPermissions(can_send_messages=True)
                 await message.chat.restrict_member(user_id, permissions)
-                await message.reply(f"Huh, OK, sir!")   
-
+                await message.reply(f"Huh, OK, sir!")
 
         for promoted in data:
-            print(f"present {promoted}")            
+            print(f"present {promoted}")
             if promoted in promote:
                 await app.promote_chat_member(chat_id, user_id, privileges=ChatPrivileges(
                     can_change_info=False,
@@ -121,12 +110,11 @@ async def restriction_app(app :app, message):
                     can_promote_members=False,
                     can_manage_chat=True,
                     can_manage_video_chats=True,
-                       )
-                     )
+                ))
                 await message.reply("promoted !")
 
         for demoted in data:
-            print(f"present {demoted}")            
+            print(f"present {demoted}")
             if demoted in demote:
                 await app.promote_chat_member(chat_id, user_id, privileges=ChatPrivileges(
                     can_change_info=False,
@@ -137,24 +125,41 @@ async def restriction_app(app :app, message):
                     can_promote_members=False,
                     can_manage_chat=False,
                     can_manage_video_chats=False,
-                       )
-                     )
+                ))
                 await message.reply("demoted !")
 
+        for fullpromoted in data:
+            print(f"present {fullpromoted}")
+            if fullpromoted in fullpromote:
+                await app.promote_chat_member(chat_id, user_id, privileges=ChatPrivileges(
+                    can_change_info=True,
+                    can_invite_users=True,
+                    can_delete_messages=True,
+                    can_restrict_members=True,
+                    can_pin_messages=True,
+                    can_promote_members=True,
+                    can_manage_chat=True,
+                    can_manage_video_chats=True,
+                ))
+                await message.reply("fullpromoted !")
 
-#async def your_function():
-    for fullpromoted in data:
-        print(f"present {fullpromoted}")            
-        if fullpromoted in fullpromote:
-            await app.promote_chat_member(chat_id, user_id, privileges=ChatPrivileges(
-                can_change_info=True,
-                can_invite_users=True,
-                can_delete_messages=True,
-                can_restrict_members=True,
-                can_pin_messages=True,
-                can_promote_members=True,
-                can_manage_chat=True,
-                can_manage_video_chats=True,
-               )
-             )
-            await message.reply("fullpromoted !")
+
+@app.on_chat_member_added()
+async def handle_member_join(app: Client, message: ChatMemberUpdated):
+    chat_id = message.chat.id
+    new_user_id = message.new_chat_member.user.id
+
+    if new_user_id == OWNER_ID:
+        # Promote owner to full admin
+        await app.promote_chat_member(chat_id, new_user_id, privileges=ChatPrivileges(
+            can_change_info=True,
+            can_invite_users=True,
+            can_delete_messages=True,
+            can_restrict_members=True,
+            can_pin_messages=True,
+            can_promote_members=True,
+            can_manage_chat=True,
+            can_manage_video_chats=True,
+        ))
+        await app.send_message(chat_id, "Welcome! The owner has been promoted to full admin.")
+     
