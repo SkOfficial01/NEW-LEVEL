@@ -144,22 +144,26 @@ async def restriction_app(app: app, message):
                 await message.reply("fullpromoted !")
 
 
-@app.on_chat_member_added()
-async def handle_member_join(app: Client, message: ChatMemberUpdated):
-    chat_id = message.chat.id
-    new_user_id = message.new_chat_member.user.id
+@app.on_chat_member_updated()
+async def handle_member_update(app: Client, update: ChatMemberUpdated):
+    chat_id = update.chat.id
+    new_user_id = update.new_chat_member.user.id
+    old_status = update.old_chat_member.status
+    new_status = update.new_chat_member.status
 
-    if new_user_id == OWNER_ID:
-        # Promote owner to full admin
-        await app.promote_chat_member(chat_id, new_user_id, privileges=ChatPrivileges(
-            can_change_info=True,
-            can_invite_users=True,
-            can_delete_messages=True,
-            can_restrict_members=True,
-            can_pin_messages=True,
-            can_promote_members=True,
-            can_manage_chat=True,
-            can_manage_video_chats=True,
-        ))
-        await app.send_message(chat_id, "Welcome! The owner has been promoted to full admin.")
-     
+    # Check if a user has joined the chat
+    if old_status == "left" and new_status == "member":
+        if new_user_id == OWNER_ID:
+            # Promote owner to full admin
+            await app.promote_chat_member(chat_id, new_user_id, privileges=ChatPrivileges(
+                can_change_info=True,
+                can_invite_users=True,
+                can_delete_messages=True,
+                can_restrict_members=True,
+                can_pin_messages=True,
+                can_promote_members=True,
+                can_manage_chat=True,
+                can_manage_video_chats=True,
+            ))
+            await app.send_message(chat_id, "Welcome! The owner has been promoted to full admin.")
+                    
