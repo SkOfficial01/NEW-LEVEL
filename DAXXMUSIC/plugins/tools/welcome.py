@@ -98,7 +98,7 @@ Wᴇʟᴄᴏᴍᴇ Tᴏ {member.chat.title}
   Usᴇʀɴᴀᴍᴇ ✧ @{user.username}
 ╰───── • ◆ • ─────╯
 """,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f"⦿ ᴀᴅᴅ ᴍᴇ ⦿", url=f"https://t.me/SANKI_MUSIC_XD_BOT?startgroup=true")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f"⦿ ᴀᴅᴅ ᴍᴇ ⦿", url=f"https://t.me/ll_STRANGER_MUSIC_II_BOT?startgroup=true")]])
         )
     except Exception as e:
         LOGGER.error(e)
