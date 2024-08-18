@@ -110,6 +110,5 @@ async def get_thumb(videoid):
     arial = ImageFont.truetype("DAXXMUSIC/assets/assets/font2.ttf", 30)
     font = ImageFont.truetype("DAXXMUSIC/assets/assets/font.ttf", 30)
     title_font = ImageFont.truetype("DAXXMUSIC/assets/assets/font3.ttf", 45)
-
     background.save(f"cache/{videoid}_v4.png")
     return f"cache/{videoid}_v4.png"
