@@ -4,7 +4,7 @@
 
 ![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=skofficial001&repo=New_sanki&theme=flag-india)
 
-[![GIF](https://github.com/skofficial001/New_sanki/blob/main/skofficial001.gif)](https://github.com/skofficial001)
+[![GIF](https://github.com/skofficial01/New_sanki/blob/main/skofficial001.gif)](https://github.com/skofficial01)
 
 
 
